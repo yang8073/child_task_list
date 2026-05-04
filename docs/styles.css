@@ -1,0 +1,41 @@
+:root {
+  --bg: #f2fbff;
+  --card: #ffffff;
+  --text: #1f2937;
+  --ok: #16a34a;
+  --warn: #f59e0b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+header { margin: 1rem; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .7rem 0;
+}
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: .45rem .8rem;
+  cursor: pointer;
+}
+.done { background: var(--ok); color: #fff; }
+.buy { background: var(--warn); color: #111827; }
