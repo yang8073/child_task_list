@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  role      Role
+  name      String
+  pin       String?
+  parentId  String?
+  parent    User?    @relation("ParentChildren", fields: [parentId], references: [id])
+  children  User[]   @relation("ParentChildren")
+  tasks     TaskTemplate[]
+  ledger    TokenLedger[]
+  redemptions Redemption[]
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  PARENT
+  CHILD
+}
+
+model TaskTemplate {
+  id           String   @id @default(cuid())
+  childId      String
+  child        User     @relation(fields: [childId], references: [id])
+  title        String
+  rewardTokens Int
+  scheduleType ScheduleType
+  weekdays     String?
+  timeOfDay    String?
+  active       Boolean  @default(true)
+  completions  TaskCompletion[]
+  createdAt    DateTime @default(now())
+}
+
+enum ScheduleType {
+  DAILY
+  WEEKLY
+  DATE
+}
+
+model TaskCompletion {
+  id             String   @id @default(cuid())
+  childId        String
+  taskTemplateId String
+  date           DateTime
+  isCompleted    Boolean  @default(false)
+  completedAt    DateTime?
+
+  taskTemplate TaskTemplate @relation(fields: [taskTemplateId], references: [id])
+
+  @@unique([childId, taskTemplateId, date])
+}
+
+model TokenLedger {
+  id        String   @id @default(cuid())
+  childId   String
+  child     User     @relation(fields: [childId], references: [id])
+  delta     Int
+  reason    LedgerReason
+  refId     String
+  createdAt DateTime @default(now())
+}
+
+enum LedgerReason {
+  TASK_COMPLETE
+  TASK_UNDO
+  REDEEM
+}
+
+model ShopItem {
+  id         String   @id @default(cuid())
+  parentId   String
+  name       String
+  costTokens Int
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+}
+
+model Redemption {
+  id         String   @id @default(cuid())
+  childId    String
+  child      User     @relation(fields: [childId], references: [id])
+  shopItemId String
+  costTokens Int
+  status     RedemptionStatus @default(SUCCESS)
+  createdAt  DateTime @default(now())
+}
+
+enum RedemptionStatus {
+  SUCCESS
+  CANCELLED
+}
