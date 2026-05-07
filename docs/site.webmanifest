@@ -1,0 +1,17 @@
+{
+  "name": "每日任務清單",
+  "short_name": "任務清單",
+  "description": "兒童友善的每日任務與商城注音清單。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2fbff",
+  "theme_color": "#38bdf8",
+  "icons": [
+    {
+      "src": "app-icon.svg?v=0.2.0",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

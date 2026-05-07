@@ -3,28 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>每日任務清單｜任務（ㄖㄣˋ ㄨˋ）</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>每日任務清單｜兒童注音版</title>
+  <link rel="icon" type="image/svg+xml" href="app-icon.svg?v=0.2.0" />
+  <link rel="apple-touch-icon" href="app-icon.svg?v=0.2.0" />
+  <link rel="manifest" href="site.webmanifest?v=0.2.0" />
+  <meta name="theme-color" content="#38bdf8" />
+  <link rel="stylesheet" href="styles.css?v=0.2.0" />
 </head>
 <body>
-  <header class="card">
-    <h1>每日任務清單</h1>
-    <p>兒童模式：中文＋注音</p>
-    <div class="token">🪙 代幣（ㄉㄞˋ ㄅㄧˋ）：<span id="balance">0</span></div>
+  <header class="card hero">
+    <div class="hero-title">
+      <svg class="app-logo" aria-hidden="true"><use href="icons.svg?v=0.2.0#icon-app"></use></svg>
+      <h1>
+        <span class="bopomofo-word" aria-label="每ㄇㄟˇ 日ㄖˋ 任ㄖㄣˋ 務ㄨˋ 清ㄑㄧㄥ 單ㄉㄢ">
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">每</span><span class="zhuyin">ㄇㄟˇ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">日</span><span class="zhuyin">ㄖˋ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">任</span><span class="zhuyin">ㄖㄣˋ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">務</span><span class="zhuyin">ㄨˋ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">清</span><span class="zhuyin">ㄑㄧㄥ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">單</span><span class="zhuyin">ㄉㄢ</span></span>
+        </span>
+      </h1>
+    </div>
+    <div class="hero-meta">
+      <p>兒童模式：大字體＋右側注音</p>
+      <span class="version-badge">v<span id="appVersion">0.2.0</span></span>
+    </div>
+    <div class="token">
+      <span class="bopomofo-word" aria-label="代ㄉㄞˋ 幣ㄅㄧˋ">
+        <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">代</span><span class="zhuyin">ㄉㄞˋ</span></span>
+        <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">幣</span><span class="zhuyin">ㄅㄧˋ</span></span>
+      </span>
+      <span class="balance-wrap"><svg class="inline-icon" aria-hidden="true"><use href="icons.svg?v=0.2.0#icon-coin"></use></svg><span id="balance">0</span></span>
+    </div>
   </header>
 
   <main class="grid">
     <section class="card">
-      <h2>今日任務（ㄐㄧㄣ ㄖˋ ㄖㄣˋ ㄨˋ）</h2>
+      <h2>
+        <svg class="section-icon" aria-hidden="true"><use href="icons.svg?v=0.2.0#icon-tasks"></use></svg>
+        <span class="bopomofo-word" aria-label="今ㄐㄧㄣ 日ㄖˋ 任ㄖㄣˋ 務ㄨˋ">
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">今</span><span class="zhuyin">ㄐㄧㄣ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">日</span><span class="zhuyin">ㄖˋ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">任</span><span class="zhuyin">ㄖㄣˋ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">務</span><span class="zhuyin">ㄨˋ</span></span>
+        </span>
+      </h2>
       <ul id="taskList"></ul>
     </section>
 
     <section class="card">
-      <h2>商城（ㄕㄤ ㄔㄥˊ）</h2>
+      <h2>
+        <svg class="section-icon" aria-hidden="true"><use href="icons.svg?v=0.2.0#icon-shop"></use></svg>
+        <span class="bopomofo-word" aria-label="商ㄕㄤ 城ㄔㄥˊ">
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">商</span><span class="zhuyin">ㄕㄤ</span></span>
+          <span class="bopomofo-pair" aria-hidden="true"><span class="hanzi">城</span><span class="zhuyin">ㄔㄥˊ</span></span>
+        </span>
+      </h2>
       <ul id="shopList"></ul>
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=0.2.0"></script>
 </body>
 </html>
