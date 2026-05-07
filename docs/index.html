@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>每日任務清單｜任務（ㄖㄣˋ ㄨˋ）</title>
+  <title>每日任務清單｜兒童注音版</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="card">
-    <h1>每日任務清單</h1>
-    <p>兒童模式：中文＋注音</p>
-    <div class="token">🪙 代幣（ㄉㄞˋ ㄅㄧˋ）：<span id="balance">0</span></div>
+  <header class="card hero">
+    <h1 data-bopomofo="每|ㄇㄟˇ 日|ㄖˋ 任|ㄖㄣˋ 務|ㄨˋ 清|ㄑㄧㄥ 單|ㄉㄢ"></h1>
+    <p>兒童模式：大字體＋右側注音</p>
+    <div class="token">
+      <span data-bopomofo="代|ㄉㄞˋ 幣|ㄅㄧˋ"></span>
+      <span class="balance-wrap">🪙 <span id="balance">0</span></span>
+    </div>
   </header>
 
   <main class="grid">
     <section class="card">
-      <h2>今日任務（ㄐㄧㄣ ㄖˋ ㄖㄣˋ ㄨˋ）</h2>
+      <h2 data-bopomofo="今|ㄐㄧㄣ 日|ㄖˋ 任|ㄖㄣˋ 務|ㄨˋ"></h2>
       <ul id="taskList"></ul>
     </section>
 
     <section class="card">
-      <h2>商城（ㄕㄤ ㄔㄥˊ）</h2>
+      <h2 data-bopomofo="商|ㄕㄤ 城|ㄔㄥˊ"></h2>
       <ul id="shopList"></ul>
     </section>
   </main>
